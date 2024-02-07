@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #050210;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .circle {
+      width: 250px; /* Povećavamo veličinu kruga */
+      height: 250px;
+      border-radius: 50%;
+      background: conic-gradient(#fb5dad, #55fb9f, #b97aff);
+      animation: rotate 4s linear infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .inner-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px; /* Povećavamo veličinu unutar kruga */
+      height: 200px;
+      border-radius: 50%;
+      background: #000;
+      animation: pulse 1s ease-in-out infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+  </style>
+  <title>Animating Circle</title>
+</head>
+<body>
+  <div class="container">
+    <div class="circle">
+      <div class="inner-circle"></div>
+    </div>
+  </div>
+</body>
+</html>
